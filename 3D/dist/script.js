@@ -56,4 +56,51 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2w1a3B3YTMxMGNmbTNjb
             },
             labelLayerId
         );
+        
+        
+        
+        map.on('load', () => {
+// Load an image from an external URL.
+map.loadImage(
+'https://docs.mapbox.com/mapbox-gl-js/assets/cat.png',
+(error, image) => {
+if (error) throw error;
+ 
+// Add the image to the map style.
+map.addImage('cat', image);
+ 
+// Add a data source containing one point feature.
+map.addSource('point', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [150.8966428711643, -34.424838253323756]
+}
+}
+]
+}
+});
+ 
+// Add a layer to use the image to represent the data.
+map.addLayer({
+'id': 'points',
+'type': 'symbol',
+'source': 'point', // reference the data source
+'layout': {
+'icon-image': 'cat', // reference the image
+'icon-size': 0.25
+}
+});
+}
+);
+});
+        
+        
+        
+        
     });
