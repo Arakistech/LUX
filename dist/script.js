@@ -18,7 +18,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2t4NHBqNHd1MHRvaTJub
             'type': 'Feature',
             'geometry': {
               'type': 'Point',
-              'coordinates': [150.89656106371746, -34.425284064779056] 
+              'coordinates': [150.89656106371746, -34.425214064779056] 
             },
             'properties': {
               'title': 'LUX Bistro Bar',
@@ -109,7 +109,9 @@ map.on('load', () => {
             labelLayerId
         );
   
-   const popup = new mapboxgl.Popup({ closeOnClick: false })
+   const popup = new mapboxgl.Popup({
+     closeButton: false,
+     closeOnClick: false })
         .setLngLat([150.8966428711643, -34.424838253323756])
         .setHTML('<h2>2 HOURS FREE PARKING</h2>')
         .addTo(map);
