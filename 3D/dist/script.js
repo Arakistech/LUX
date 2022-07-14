@@ -65,7 +65,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2w1a3B3YTMxMGNmbTNjb
 {
 'type': 'Feature',
 'properties': {
-'message': 'Foo',
+'message': 'Lux Bistro Bar',
 'iconSize': [60, 60]
 },
 'geometry': {
@@ -107,11 +107,11 @@ const el = document.createElement('div');
 const width = marker.properties.iconSize[0];
 const height = marker.properties.iconSize[1];
 el.className = 'marker';
-el.style.backgroundImage = `url(https://github.com/Arakistech/LUX/blob/main/3D/dist/unnamed.png)`;   
-    
+   
+el.style.backgroundImage = `url(https://github.com/Arakistech/LUX/blob/main/3D/dist/unnamed.png${width}/${height}/)`;   
 //el.style.backgroundImage = `url(https://placekitten.com/g/${width}/${height}/)`;
-//el.style.width = `${width}px`;
-//el.style.height = `${height}px`;
+el.style.width = `${width}px`;
+el.style.height = `${height}px`;
 el.style.backgroundSize = '100%';
  
 el.addEventListener('click', () => {
