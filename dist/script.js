@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2podnY0cWs5MTAyaTNrbnY3MnR5OHJ0bSJ9.aOqeUPZkBISqt1UKpmmX7g';
+   mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2t4NHBqNHd1MHRvaTJubnhodmxqdXhjbiJ9.T6OE8lXKHGCObadLCmIoqg';
 
       const geojson = {
         'type': 'FeatureCollection',
@@ -18,7 +18,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2podnY0cWs5MTAyaTNrb
             'type': 'Feature',
             'geometry': {
               'type': 'Point',
-              'coordinates': [150.8966428711643, -34.424838253323756]
+              'coordinates': [150.89656106371746, -34.425284064779056] 
             },
             'properties': {
               'title': 'LUX Bistro Bar',
@@ -32,7 +32,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2podnY0cWs5MTAyaTNrb
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v10',
         center: [150.8966428711643, -34.424838253323756],
-        zoom: 15.5,
+        zoom: 16,
         pitch: 45,
         bearing: -17.6,
       });
@@ -42,7 +42,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2podnY0cWs5MTAyaTNrb
         // create a HTML element for each feature
         const el = document.createElement('div');
         el.className = 'marker';
-
+       
         // make a marker for each feature and add it to the map
         new mapboxgl.Marker(el)
           .setLngLat(feature.geometry.coordinates)
@@ -52,16 +52,17 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2podnY0cWs5MTAyaTNrb
                 `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
               )
           )
-          .addTo(map);
-        
- 
-        
+          .addTo(map);  
         
       }
 
 
+
+
+
 map.on('load', () => {
         // Insert the layer beneath any symbol layer.
+ 
         const layers = map.getStyle().layers;
         const labelLayerId = layers.find(
             (layer) => layer.type === 'symbol' && layer.layout['text-field']
@@ -106,5 +107,12 @@ map.on('load', () => {
                 }
             },
             labelLayerId
-        ); 
+        );
+  
+   const popup = new mapboxgl.Popup({ closeOnClick: false })
+        .setLngLat([150.8966428711643, -34.424838253323756])
+        .setHTML('<h2>2 HOURS FREE PARKING</h2>')
+        .addTo(map);
         });
+    
+ 
