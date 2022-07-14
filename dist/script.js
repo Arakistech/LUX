@@ -1,4 +1,4 @@
-   mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2t4NHBqNHd1MHRvaTJubnhodmxqdXhjbiJ9.T6OE8lXKHGCObadLCmIoqg';
+mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2t4NHBqNHd1MHRvaTJubnhodmxqdXhjbiJ9.T6OE8lXKHGCObadLCmIoqg';
 
       const geojson = {
         'type': 'FeatureCollection',
@@ -114,5 +114,3 @@ map.on('load', () => {
         .setHTML('<h2>2 HOURS FREE PARKING</h2>')
         .addTo(map);
         });
-    
- 
