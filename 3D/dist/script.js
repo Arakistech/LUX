@@ -107,7 +107,7 @@ const el = document.createElement('div');
 const width = marker.properties.iconSize[0];
 const height = marker.properties.iconSize[1];
 el.className = 'marker';
-el.style.backgroundImage = `url(https://github.com/Arakistech/LUX/blob/main/3D/dist/unnamed.png?raw=true)`;   
+el.style.backgroundImage = `url(https://github.com/Arakistech/LUX/blob/main/3D/dist/unnamed.png)`;   
     
 //el.style.backgroundImage = `url(https://placekitten.com/g/${width}/${height}/)`;
 //el.style.width = `${width}px`;
