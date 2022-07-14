@@ -70,7 +70,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2w1a3B3YTMxMGNmbTNjb
 },
 'geometry': {
 'type': 'Point',
-'coordinates': [-66.324462, -16.024695]
+'coordinates': [150.8966428711643, -34.424838253323756]
 }
 },
 {
