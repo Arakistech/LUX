@@ -98,12 +98,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2w1a3B3YTMxMGNmbTNjb
 ]
 };
  
-const map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11',
-center: [-65.017, -16.457],
-zoom: 5
-});
+
  
 // Add markers to the map.
 for (const marker of geojson.features) {
