@@ -30,7 +30,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2t4NHBqNHd1MHRvaTJub
 
       const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/light-v10',
+        style: 'mapbox://styles/iarakistain/cl5m4fbq6000s14t98hkk3ulo',
         center: [150.8966428711643, -34.424838253323756],
         zoom: 16,
         pitch: 45,
@@ -112,7 +112,7 @@ map.on('load', () => {
    const popup = new mapboxgl.Popup({
      closeButton: false,
      closeOnClick: false })
-        .setLngLat([150.8966428711643, -34.424838253323756])
-        .setHTML('<h2>2 HOURS FREE PARKING</h2>')
+        .setLngLat([15.8966428711643, -34.424838253323756])
+        .setHTML('')
         .addTo(map);
         });
