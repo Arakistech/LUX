@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.mapboxgl-ctrl-pitchtoggle-3d {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+ICAgIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkeT0iLjM1ZW0iIHN0eWxlPSJmb250LXNpemU6IDE0cHg7IGZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhIE5ldWUnLEFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmOyBmb250LXdlaWdodDogYm9sZDsgdGV4dC1hbmNob3I6IG1pZGRsZTsiPjNEPC90ZXh0Pjwvc3ZnPg==);
+}
+
+.mapboxgl-ctrl-pitchtoggle-2d {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+ICAgIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkeT0iLjM1ZW0iIHN0eWxlPSJmb250LXNpemU6IDE0cHg7IGZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhIE5ldWUnLEFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmOyBmb250LXdlaWdodDogYm9sZDsgdGV4dC1hbmNob3I6IG1pZGRsZTsiPjJEPC90ZXh0Pjwvc3ZnPg==);
+}
+
+html,
+body {
+    height: 100%;
+    background-color: white
+}
+
+#map {
+    position: absolute;
+    top: 145px;
+    bottom: 0;
+    width: 100%;
+    flex-grow: 1;
+    cursor: none
+}
+
+.container-legend-geocoder-slider {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px 20px;
+
+}
+
+.geocoder {
+    z-index: 1;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 3;
+}
+
+
+.legend-edificios {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+
+}
+
+.mapboxgl-ctrl-geocoder {
+    margin: 0 auto;
+    max-width: 220px;
+    font-family: "Encode Sans", sans-serif;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+    font-size: 14px;
+    font-family: "Encode Sans", sans-serif;
+    margin: 0 auto;
+    padding: 5px 23px 5px 40px
+}
+
+
+
+/* SLIDER */
+
+.axis {
+    font-size: 12px;
+    font-family: 'Encode Sans', sans-serif
+}
+
+.parameter-value text {
+    font-size: 18px;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 700
+}
+
+.slider-contenedor {
+    flex: 1;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+
+}
+
+.handle:focus {
+    outline: none
+}
+
+@media (min-width: 900px) {
+
+    #map {
+        top: 80px;
+    }
+
+
+    .container-legend-geocoder-slider {
+        height: 80px
+    }
+
+    .legend-edificios{
+        order:2
+    }
+
+    .slider-contenedor{
+        order: 3;
+    }
+
+
+}

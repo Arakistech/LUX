@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Display a map</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <script src="Display%20a%20map_files/mapbox-gl.js"></script>
+  <link href="Display%20a%20map_files/mapbox-gl.css" rel="stylesheet">
+  <script src="Display%20a%20map_files/mapbox-gl-geocoder.min.js">
+  </script>
+  <link rel="stylesheet" href="Display%20a%20map_files/mapbox-gl-geocoder.css" type="text/css">
+  <link rel="stylesheet" href="Display%20a%20map_files/mapa-ciudades.css">
+  <link href="Display%20a%20map_files/css.css" rel="stylesheet">
+  <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+  <script src="Display%20a%20map_files/es6-promise.min.js"></script>
+  <script src="Display%20a%20map_files/es6-promise.auto.min.js"></script>
+  <script src="Display%20a%20map_files/d3.v4.min.js"></script>
+  <script src="Display%20a%20map_files/d3-simple-slider.min.js"></script>
+
+</head>
+
+<body>
+
+  
+   
+    <div id="geocoder" class="geocoder" style="visibility: hidden;><div class="mapboxgl-ctrl-geocoder mapboxgl-ctrl"><svg class="mapboxgl-ctrl-geocoder--icon mapboxgl-ctrl-geocoder--icon-search" viewBox="0 0 8 8" xml:space="preserve" width="0" height="0"><path d="M7.4 2.5c-2.7 0-4.9 2.2-4.9 4.9s2.2 4.9 4.9 4.9c1 0 1.8-.2 2.5-.8l3.7 3.7c.2.2.4.3.8.3.7 0 1.1-.4 1.1-1.1 0-.3-.1-.5-.3-.8L11.4 10c.4-.8.8-1.6.8-2.5.1-2.8-2.1-5-4.8-5zm0 1.6c1.8 0 3.2 1.4 3.2 3.2s-1.4 3.2-3.2 3.2-3.3-1.3-3.3-3.1 1.4-3.3 3.3-3.3z"></path></svg><input type="text" class="mapboxgl-ctrl-geocoder--input" placeholder="Busca tu calle o ciudad" aria-label="Busca tu calle o ciudad"><div class="suggestions-wrapper"><ul class="suggestions" style="display: none;"></ul></div><div class="mapboxgl-ctrl-geocoder--pin-right"><button aria-label="Clear" class="mapboxgl-ctrl-geocoder--button"><svg class="mapboxgl-ctrl-geocoder--icon mapboxgl-ctrl-geocoder--icon-close" viewBox="0 0 18 18" xml:space="preserve" width="18" height="18"><path d="M3.8 2.5c-.6 0-1.3.7-1.3 1.3 0 .3.2.7.5.8L7.2 9 3 13.2c-.3.3-.5.7-.5 1 0 .6.7 1.3 1.3 1.3.3 0 .7-.2 1-.5L9 10.8l4.2 4.2c.2.3.7.3 1 .3.6 0 1.3-.7 1.3-1.3 0-.3-.2-.7-.3-1l-4.4-4L15 4.6c.3-.2.5-.5.5-.8 0-.7-.7-1.3-1.3-1.3-.3 0-.7.2-1 .3L9 7.1 4.8 2.8c-.3-.1-.7-.3-1-.3z"></path></svg></button><svg class="mapboxgl-ctrl-geocoder--icon mapboxgl-ctrl-geocoder--icon-loading" viewBox="0 0 18 18" xml:space="preserve" width="18" height="18"><path fill="#333" d="M4.4 4.4l.8.8c2.1-2.1 5.5-2.1 7.6 0l.8-.8c-2.5-2.5-6.7-2.5-9.2 0z"></path><path opacity=".1" d="M12.8 12.9c-2.1 2.1-5.5 2.1-7.6 0-2.1-2.1-2.1-5.5 0-7.7l-.8-.8c-2.5 2.5-2.5 6.7 0 9.2s6.6 2.5 9.2 0 2.5-6.6 0-9.2l-.8.8c2.2 2.1 2.2 5.6 0 7.7z"></path></svg></div></div></div>
+
+
+    
+
+  <div id="map" class="mapboxgl-map"><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" role="region" style="width: 1536px; height: 698px;" width="1920" height="872"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-zoom-in" type="button" title="Zoom in" aria-label="Zoom in" aria-disabled="false"><span class="mapboxgl-ctrl-icon" aria-hidden="true"></span></button><button class="mapboxgl-ctrl-zoom-out" type="button" title="Zoom out" aria-label="Zoom out" aria-disabled="false"><span class="mapboxgl-ctrl-icon" aria-hidden="true"></span></button><button class="mapboxgl-ctrl-compass" type="button" title="Reset bearing to north" aria-label="Reset bearing to north"><span class="mapboxgl-ctrl-icon" aria-hidden="true" style="transform: rotate(0deg);"></span></button></div><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-fullscreen" type="button" aria-label="Enter fullscreen" title="Enter fullscreen"><span class="mapboxgl-ctrl-icon" aria-hidden="true"></span></button></div><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-pitchtoggle-3d" type="button"></button></div></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank" rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib mapboxgl-compact"><button class="mapboxgl-ctrl-attrib-button" type="button" title="Toggle attribution" aria-label="Toggle attribution"></button><div class="mapboxgl-ctrl-attrib-inner" role="list"><a href="https://www.mapbox.com/about/maps/" target="_blank" title="Mapbox" aria-label="Mapbox" role="listitem"></a> <a href="https://www.openstreetmap.org/about/" target="_blank" title="OpenStreetMap" aria-label="OpenStreetMap" role="listitem">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?owner=raulsanchezeldiario&amp;id=ckr57kioj15xl18pdhpmubxk9&amp;access_token=pk.eyJ1IjoicmF1bHNhbmNoZXplbGRpYXJpbyIsImEiOiJjamt3cmh6MXQwMHZlM3ZvZnprZWVvcWN4In0.-6I0cf8YXAABfTTuzLp0HQ" target="_blank" title="Map feedback" aria-label="Map feedback" role="listitem" rel="noopener nofollow">Improve this map</a></div></div></div></div></div>
+  <script>
+    mapboxgl.accessToken =
+      "pk.eyJ1IjoicmF1bHNhbmNoZXplbGRpYXJpbyIsImEiOiJjamt3cmh6MXQwMHZlM3ZvZnprZWVvcWN4In0.-6I0cf8YXAABfTTuzLp0HQ";
+
+
+    var totalWidth = window.innerWidth,
+      isMobile = totalWidth < 900;
+    marginSlider = {
+      top: 10,
+      left: isMobile ? 45 : 35
+    };
+
+
+
+
+
+    var map = new mapboxgl.Map({
+      container: "map", // container id
+      style: "mapbox://styles/raulsanchezeldiario/ckr57kioj15xl18pdhpmubxk9", // stylesheet location
+      center: [-3.697738, 40.415019], // starting position [lng, lat]
+      zoom: 5,
+      maxZoom: 18,
+      minZoom: 5,
+      attributionControl: false,
+      maxTileCacheSize: 8
+    });
+
+    map.scrollZoom.disable();
+
+
+    var geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+      countries: "es",
+      //language: "es",
+      types: "country, region, place, neighborhood, address",
+      marker: false,
+      placeholder: "Busca tu calle o ciudad",
+    });
+
+
+    map.addControl(new mapboxgl.NavigationControl());
+
+
+
+    if (totalWidth > 900) {
+      map.addControl(new mapboxgl.FullscreenControl({
+        container: document.querySelector("body")
+      }));
+    }
+
+    map.addControl(
+      new mapboxgl.AttributionControl({
+        compact: true
+      }),
+      "bottom-right"
+    );
+
+
+
+    class PitchToggle {
+
+      constructor({
+        bearing = 0,
+        pitch = 60,
+        minpitchzoom = null
+      }) {
+        this._bearing = bearing;
+        this._pitch = pitch;
+        this._minpitchzoom = minpitchzoom;
+      }
+
+      onAdd(map) {
+        this._map = map;
+        let _this = this;
+
+        this._btn = document.createElement('button');
+        this._btn.className = 'mapboxgl-ctrl-icon mapboxgl-ctrl-pitchtoggle-3d';
+        this._btn.type = 'button';
+        this._btn['aria-label'] = 'Toggle Pitch';
+        this._btn.onclick = function () {
+          if (map.getPitch() === 0) {
+            let options = {
+              pitch: _this._pitch,
+              bearing: _this._bearing
+            };
+            if (_this._minpitchzoom && map.getZoom() > _this._minpitchzoom) {
+              options.zoom = _this._minpitchzoom;
+            }
+            map.easeTo(options);
+            _this._btn.className = 'mapboxgl-ctrl-icon mapboxgl-ctrl-pitchtoggle-2d';
+          } else {
+            map.easeTo({
+              pitch: 0,
+              bearing: 0
+            });
+            _this._btn.className = 'mapboxgl-ctrl-icon mapboxgl-ctrl-pitchtoggle-3d';
+          }
+        };
+
+
+        this._container = document.createElement('div');
+        this._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
+        this._container.appendChild(this._btn);
+
+        return this._container;
+      }
+
+      onRemove() {
+        this._container.parentNode.removeChild(this._container);
+        this._map = undefined;
+      }
+
+    }
+
+
+    map.addControl(new PitchToggle({
+      minpitchzoom: 14
+    }));
+
+
+
+
+    document.getElementById("geocoder").appendChild(geocoder.onAdd(map));
+
+
+
+
+
+
+    map.on("load", function () {
+
+
+
+
+
+      map.addSource('ciudadesedificiossource', {
+        'type': 'vector',
+        'url': 'mapbox://raulsanchezeldiario.catastro-edificios-alturas'
+      });
+
+
+
+
+
+
+
+      map.addLayer({
+        'id': 'poligonos-edificios',
+        'type': 'fill',
+        'source': 'ciudadesedificiossource',
+        'source-layer': 'ciudadesedificios',
+        'maxzoom': 14,
+        'paint': {
+          'fill-color': ["interpolate", ["linear", 1],
+            ["get", "numberOfFloorsAboveGround"],
+            1, "#276419",
+            2, "#4d9221",
+            3, "#7fbc41",
+            4, "#b8e186",
+            5, "#e6f5d0",
+            6, "#fde0ef",
+            7, "#f1b6da",
+            8, "#de77ae",
+            9, "#c51b7d",
+            10, "#8e0152"
+          ],
+        }
+      }, "waterway-label");
+
+
+      map.addLayer({
+        'id': 'poligonos-edificios-3d',
+        'type': 'fill-extrusion',
+        'source': 'ciudadesedificiossource',
+        'source-layer': 'ciudadesedificios',
+        'minzoom': 14,
+        'paint': {
+          'fill-extrusion-height': [
+            "interpolate",
+            ["linear"],
+            [
+              "get",
+              "numberOfFloorsAboveGround"
+            ],
+            0,
+            0,
+            300,
+            900
+          ],
+          'fill-extrusion-color': ["interpolate", ["linear", 1],
+            ["get", "numberOfFloorsAboveGround"],
+
+            1, "#276419",
+            2, "#4d9221",
+            3, "#7fbc41",
+            4, "#b8e186",
+            5, "#e6f5d0",
+            6, "#fde0ef",
+            7, "#f1b6da",
+            8, "#de77ae",
+            9, "#c51b7d",
+            10, "#8e0152"
+          ],
+        }
+      }, "waterway-label");
+
+
+      var sliderRange = d3
+        .sliderBottom()
+        .min(1900)
+        .max(2021)
+        .width(260)
+        .tickFormat(function (d) {
+          return d == 1900 ? "<1900" : d
+        })
+        .ticks(totalWidth > 900 ? 5 : 5)
+        .step(1)
+        .default([1900, 2021])
+        .fill('#000000')
+        .on('end', function input() {
+          updateCosas();
+        });
+
+
+
+      var gRange = d3
+        .select("div#slider-range")
+        .append("svg")
+        .attr("width", "350px")
+        .attr("height", 60)
+        .append("g")
+        .attr("transform", "translate(" + marginSlider.left + "," + marginSlider.top + ")")
+
+      gRange.call(sliderRange);
+
+
+      function updateCosas() {
+
+        var minyear = sliderRange.value()[0] == 1900 ? 0 : sliderRange.value()[0]
+        var maxyear = sliderRange.value()[0] == 2021 ? 30000 : sliderRange.value()[1]
+
+        map.setFilter('poligonos-edificios', [
+          "all",
+          [">", "year", minyear],
+          ["<", "year", maxyear]
+        ])
+
+        map.setFilter('poligonos-edificios-3d', [
+          "all",
+          [">", "year", minyear],
+          ["<", "year", maxyear]
+        ])
+      }
+
+
+    });
+  </script>
+
+
+
+</body></html>
