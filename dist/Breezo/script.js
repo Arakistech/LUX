@@ -36,7 +36,7 @@ tiles: [`https://tiles.breezometer.com/v1/air-quality/breezometer-aqi/current-co
           maxzoom: 8
         });
   
-map.addSource("polen", {
+map.addSource("pollen", {
           type: "raster",
           attribution: "Breezometer",
           tiles: [`https://tiles.breezometer.com/v1/pollen/grass/forecast/daily/{z}/{x}/{y}.png?key=${apiKey}`],
@@ -175,7 +175,7 @@ if (!map.getLayer('AQI') || !map.getLayer('Pollen')) {
 return;
 }
  
-const toggleableLayerIds = ['AQI', 'Pollen'];
+const toggleableLayerIds = ['AQI', 'Polen'];
  
 for (const id of toggleableLayerIds) {
 if (document.getElementById(id)) {
