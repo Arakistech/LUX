@@ -10,7 +10,7 @@ body { margin: 0; padding: 0; }
         left: 10px;
         z-index: 1;
         border: none;
-        width: 200px;
+        width: 1px;
         display: block;
         cursor: pointer;
         padding: 10px 20px;
