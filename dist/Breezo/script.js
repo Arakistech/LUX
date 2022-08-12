@@ -175,7 +175,7 @@ if (!map.getLayer('AQI') || !map.getLayer('Pollen')) {
 return;
 }
  
-const toggleableLayerIds = ['AQI', 'Polen'];
+const toggleableLayerIds = ['AQI', 'Pollen'];
  
 for (const id of toggleableLayerIds) {
 if (document.getElementById(id)) {
