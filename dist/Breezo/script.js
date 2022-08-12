@@ -1,7 +1,7 @@
 // add mapbox api key
 	mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2w1a3B3YTMxMGNmbTNjbWd2ZTc3bmkyMiJ9.A9qFkPgG40gFsgruODOWRA';
 // add breezometer api key
-var apiKey = "796659107bd143aab7c9c8541a9b8744";
+var apiKey = "5d4e404711734e668afccf3a01ff93a6";
 
 let style = {
         version: 8,
@@ -20,8 +20,8 @@ let style = {
 
 const map = new mapboxgl.Map({
         container: 'map',
-        zoom: 2,
-        center: [0,0],
+        zoom: 15,
+        center: [-2.503187048980808, 43.18696210428711],
         style: style,
         projection: 'globe'
     });
