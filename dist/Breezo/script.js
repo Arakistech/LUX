@@ -36,7 +36,7 @@ tiles: [`https://tiles.breezometer.com/v1/air-quality/breezometer-aqi/current-co
           maxzoom: 8
         });
   
-map.addSource("pollen", {
+map.addSource("polen", {
           type: "raster",
           attribution: "Breezometer",
           tiles: [`https://tiles.breezometer.com/v1/pollen/grass/forecast/daily/{z}/{x}/{y}.png?key=${apiKey}`],
