@@ -10,11 +10,12 @@ body { margin: 0; padding: 0; }
         left: 10px;
         z-index: 1;
         border: none;
-        width: 0px;
+        width: 200px;
         display: block;
         cursor: pointer;
         padding: 10px 20px;
         border-radius: 3px;
+        opacity:0; 
     }
     #btn-spin:hover {
         background-color: #4ea0da;
