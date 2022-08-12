@@ -20,7 +20,7 @@ let style = {
 
 const map = new mapboxgl.Map({
         container: 'map',
-        zoom: 2,
+        zoom: 15,
         center: [-2.503187048980808, 43.18696210428711],
         style: style,
         projection: 'globe'
