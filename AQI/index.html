@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Mobile UI #3: Air Quality Analytics</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="screen">
+    <main class="inner">
+      <div class="header">
+        <figure class="logo"><img src="https://www.ermua.es/images/album/750_72/c019_15_03_2004_11_10_29.jpg"/></figure>
+        <div class="view-title">Calidad del aire Ermua</div><span class="menu glyphicon glyphicon-menu-hamburger"></span>
+      </div>
+      <div class="chart">
+        <ul class="tabs">
+          <li class="is-active" data-values="24,109,88,94,102,107,156,135,124,109,108,114,109,157,56,165,65"><a href="#">8 Horas</a></li>
+          <li data-values="102,65,114,88,124,156,108,157,109,107,165,94,109,135,24,56,109"><a href="#">24 Horas</a></li>
+          <li data-values="102,109,124,165,65,107,135,56,94,156,114,24,109,109,157,108,88"><a href="#">7 Días</a></li>
+          <li data-values="149,109,128,102,114,94,109,24,156,56,165,65,107,124,157,88,135"><a href="#">4 Semanas</a></li>
+        </ul>
+        <canvas width="414" height="300" id="mainChart"></canvas>
+        <ul class="tabs average-tabs">
+          <li class="is-active" data-values="157,24,94,102,149,165,56,124,114,128,107,109,88,135,156,65,109" data-title="AQI medio" data-desc="Los niveles de AQI han estado en niveles saludables los últimos 3 días" data-status="saludable" data-level="132"><a href="#">AQI</a></li>
+          <li data-values="165,149,157,88,56,109,124,94,128,55,114,109,107,24,156,102,135" data-title="PM Medio" data-desc="Los niveles de PM han estado en la media los últimos 3 días" data-status="medio" data-level="68"><a href="#">PM</a></li>
+          <li data-values="124,88,156,149,165,107,109,102,24,94,114,109,56,157,75,135,128" data-title="CO2 medio" data-desc="Los niveles de CO2 han estado en un nivel bajo los últimos 3 días" data-status="low" data-level="53"><a href="#">CO2</a></li>
+          <li data-values="109,135,109,94,157,56,165,124,24,114,128,102,107,149,88,156,52" data-title="NO medio" data-desc="Los niveles de NO han estado en un nivel saludable los últimos 3 días" data-status="saludable" data-level="127"><a href="#">NO</a></li>
+        </ul>
+      </div>
+      <div class="body">
+        <div class="paragraph">
+          <div class="section-title"> AQI Medio</div>
+          <p class="section-description">La calidad del aire ha estado en niveles saludables los últimos 3 días</p>
+        </div>
+        <div class="average">
+          <div class="average-value">131</div>
+          <div class="status"><span class="status-circle healthy"></span>
+            <div class="status-text">saludable</div>
+          </div>
+        </div>
+        <div class="more-info">
+          <ul>
+            <li>
+              <p class="description">bajo</p>
+              <p class="value">53</p>
+            </li>
+            <li>
+              <p class="description">medio</p>
+              <p class="value">65</p>
+            </li>
+            <li>
+              <p class="description">alto</p>
+              <p class="value">126</p>
+            </li>
+            <li>
+              <p class="description">varia</p>
+              <p class="value">73</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

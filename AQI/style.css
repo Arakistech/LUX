@@ -1,0 +1,155 @@
+.header {
+  *zoom: 1;
+  box-sizing: border-box;
+  padding: 15px;
+  position: relative;
+}
+.header:before,
+.header:after {
+  content: "";
+  display: table;
+}
+.header:after {
+  clear: both;
+}
+.logo {
+  float: left;
+}
+.logo img {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+.menu {
+  cursor: pointer;
+  float: right;
+  font-size: 20px;
+  position: relative;
+  top: 6px;
+}
+.view-title {
+  font-size: 17px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.chart {
+  background-color: #213862;
+}
+.tabs {
+  font-size: 0;
+  list-style: none;
+  margin-bottom: 0;
+  position: relative;
+}
+.tabs a {
+  color: #A8AAAC;
+  display: block;
+  font-size: 14px;
+  padding: 15px;
+}
+.tabs li {
+  display: inline-block;
+  text-align: center;
+  width: 25%;
+}
+.tabs a:hover,
+.tabs a:focus,
+.tabs .is-active a {
+  background-color: #6799C9;
+  color: white;
+  text-decoration: none;
+}
+.tabs + canvas {
+  margin-top: 35px;
+}
+canvas + .tabs {
+  margin-top: 5px;
+}
+.paragraph {
+  padding: 20px;
+}
+.section-description {
+  color: #4a4a4a;
+  font-size: 13px;
+}
+.average {
+  text-align: center;
+}
+.average-value {
+  font-size: 45px;
+}
+.status-circle {
+  border-radius: 50%;
+  display: inline-block;
+  height: 16px;
+  transition: background-color 0.5s ease;
+  width: 16px;
+  vertical-align: middle;
+}
+.status-circle.low {
+  background-color: #F63818;
+}
+.status-circle.medio {
+  background-color: #DF8F31;
+}
+.status-circle.saludable {
+  background-color: #33DF2B;
+}
+.status-text {
+  display: inline-block;
+  text-transform: capitalize;
+  vertical-align: middle;
+}
+.more-info {
+  font-size: 0;
+  margin-top: 15px;
+}
+.more-info li {
+  box-sizing: border-box;
+  color: #4a4a4a;
+  cursor: default;
+  display: inline-block;
+  padding: 15px 0;
+  text-align: center;
+  width: 25%;
+}
+.more-info .description {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.more-info .value {
+  font-weight: 600;
+  font-size: 20px;
+}
+main {
+  background-color: white;
+}
+.screen {
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  background-color: #202020;
+  color: #202020;
+  font-family: "Open Sans", "Helvetica", "Arial";
+  font-size: 20px;
+}
+figure,
+ul,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.container {
+  margin: 0 auto 40px;
+  max-width: 460px;
+  padding: 0;
+  width: 100%;
+}
