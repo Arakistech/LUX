@@ -18,11 +18,11 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWFyYWtpc3RhaW4iLCJhIjoiY2t4NHBqNHd1MHRvaTJub
             'type': 'Feature',
             'geometry': {
               'type': 'Point',
-              'coordinates': [150.89656106371746, -34.425214064779056] 
+              'coordinates': [151.2230569846573, -33.87443363777381] 
             },
             'properties': {
-              'title': 'LUX Bistro Bar',
-              'description': 'SHOP 19 /110/114 Crown St, Wollongong NSW 2500'
+              'title': 'Harem Gentlemens Club',
+              'description': '70A Darlinghurst Road, Potts Point, NSW 2011'
             }
           }
         ]
