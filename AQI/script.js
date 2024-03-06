@@ -7,7 +7,7 @@ class Charts {
         var borderColor = "#4EDEFD", ctx = $("#mainChart"), chartData = {
             type: 'line',
             data: {
-                labels: ["11 oct", "", "", "18 oct", "", "", "25 oct", "", "", "1 nov", "", "", "8 nov", ""],
+                labels: ["5 Feb", "", "", "12 Feb", "", "", "19 Feb", "", "", "26 Feb", "", "", "4 Mar", ""],
                 datasets: [
                     {
                         label: "Current",
